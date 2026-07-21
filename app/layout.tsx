@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hutasana-kitchen-designs.dsc1411.chatgpt.site"),
   title: "Hutasana Intelligent Kitchen Designs LLP",
   description:
-    "Modern modular kitchen catalogue for B2B quotations and individual kitchen design enquiries.",
+    "Production-ready modular kitchen catalogue with B2B quotations, individual kitchen planning, technical specifications, and WhatsApp enquiry.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -23,14 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hutasana Intelligent Kitchen Designs LLP",
     description:
-      "Specification-first modular kitchens for builders, dealers, contractors, and homeowners.",
+      "B2B quotations and individual kitchen planning with catalogue layouts, finish packages, technical specifications, and direct WhatsApp enquiry.",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hutasana Intelligent Kitchen Designs LLP",
     description:
-      "B2B and individual modular kitchen catalogue with technical specifications.",
+      "B2B and individual modular kitchen catalogue with technical specifications and direct quotation enquiry.",
     images: ["/og.png"],
   },
 };
