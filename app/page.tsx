@@ -85,7 +85,7 @@ export default function Home() {
     <main>
       <header className="topbar">
         <div className="topbar__inner">
-          <span>Modular kitchen systems for B2B and individual clients</span>
+          <span>Engineered modular kitchens for projects and private homes</span>
           <div>
             <a href="#b2b">Business</a>
             <a href="#individual">Homeowners</a>
@@ -113,12 +113,18 @@ export default function Home() {
       <section className="hero" id="top">
         <img className="hero__image" src="/assets/kitchen-hero.png" alt="Premium modular kitchen designed by Hutasana" />
         <div className="hero__content reveal">
-          <p className="eyebrow">Modular kitchen catalogue</p>
-          <h1>Modern kitchens, specified for real projects.</h1>
+          <p className="eyebrow">Intelligent modular kitchen studio</p>
+          <h1>Precision kitchens for homes and projects.</h1>
           <p>
-            Hutasana designs, specifies, quotes, produces, and installs modular
-            kitchens for builders, dealers, architects, contractors, and homes.
+            Hutasana brings design, specification, quotation, production, and
+            installation into one refined workflow for homeowners and B2B teams.
           </p>
+          <div className="hero__chips" aria-label="Core services">
+            <span>Design</span>
+            <span>Quotation</span>
+            <span>Production</span>
+            <span>Installation</span>
+          </div>
           <div className="hero__actions">
             <a href="#b2b">B2B quotation</a>
             <a href="#individual">Individual kitchen</a>
@@ -126,9 +132,9 @@ export default function Home() {
           </div>
         </div>
         <div className="hero__card reveal reveal--late">
-          <span>Typical delivery</span>
-          <strong>45-60 days</strong>
-          <small>After design, measurement, and material approval.</small>
+          <span>Typical timeline</span>
+          <strong>45-60</strong>
+          <small>Days after measurement, specification, and final approval.</small>
         </div>
       </section>
 
@@ -154,12 +160,11 @@ export default function Home() {
       <section className="intro section">
         <div className="intro__copy reveal">
           <p className="eyebrow">About the company</p>
-          <h2>Clear design. Clear specification. Clear quotation.</h2>
+          <h2>Designed like an interior. Specified like a product.</h2>
           <p>
-            A professional kitchen project is not only about colour and photos.
-            It needs accurate measurements, material decisions, accessory
-            planning, appliance coordination, site readiness, and installation
-            responsibility. Hutasana keeps every step visible before production.
+            A professional kitchen needs more than a beautiful render. It needs
+            measured drawings, material clarity, accessory planning, appliance
+            coordination, site readiness, and installation responsibility.
           </p>
         </div>
         <div className="intro__visual reveal reveal--late">
@@ -188,7 +193,7 @@ export default function Home() {
 
         <article className="audience__panel reveal reveal--late" id="individual">
           <p className="eyebrow">Individual clients</p>
-          <h2>For homeowners who want a practical premium kitchen.</h2>
+          <h2>For homeowners who want practical premium design.</h2>
           <p>
             Share photos, rough room size, appliance list, preferred finish, and
             budget. We convert it into a storage-led modular plan with a clean
@@ -208,7 +213,7 @@ export default function Home() {
       <section className="catalogue section" id="catalogue">
         <div className="section__head reveal">
           <p className="eyebrow">Catalogue</p>
-          <h2>Kitchen layouts for every site condition.</h2>
+          <h2>Layout systems for every site condition.</h2>
         </div>
         <div className="filterbar reveal reveal--late" aria-label="Catalogue filters">
           <span>All</span>
@@ -234,7 +239,7 @@ export default function Home() {
         </div>
         <div className="showcase__content reveal reveal--late">
           <p className="eyebrow">Appliances and accessories</p>
-          <h2>Designed around how the kitchen will actually be used.</h2>
+          <h2>Every drawer, appliance, and counter has a reason.</h2>
           <p>
             Storage, cooking, washing, preparation, electrical points, and
             appliance clearances are planned together so the final kitchen is
@@ -246,7 +251,7 @@ export default function Home() {
       <section className="technical section" id="technical">
         <div className="section__head reveal">
           <p className="eyebrow">Technical details</p>
-          <h2>Specification-first planning before quotation approval.</h2>
+          <h2>Technical clarity before quotation approval.</h2>
         </div>
         <div className="technical__list">
           {specifications.map(([title, copy]) => (
