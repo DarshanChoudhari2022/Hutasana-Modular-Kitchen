@@ -12,6 +12,7 @@ const siteUrl =
 
 type LayoutCard = {
   no: string;
+  slug: string;
   title: string;
   copy: string;
   meta: string;
@@ -30,6 +31,7 @@ const detailImage = "/assets/kitchen-storage.png";
 const layouts: LayoutCard[] = [
   {
     no: "01",
+    slug: "straight-kitchen",
     title: "Straight Kitchen",
     copy: "A clean single-wall system for compact homes, staff housing, rental units, and utility kitchens.",
     meta: "8 ft to 14 ft typical run",
@@ -38,6 +40,7 @@ const layouts: LayoutCard[] = [
   },
   {
     no: "02",
+    slug: "l-shape-kitchen",
     title: "L Shape Kitchen",
     copy: "The most practical format for everyday homes, with a strong work triangle and corner storage.",
     meta: "Best for 8x8 ft and above",
@@ -46,6 +49,7 @@ const layouts: LayoutCard[] = [
   },
   {
     no: "03",
+    slug: "parallel-kitchen",
     title: "Parallel Kitchen",
     copy: "Efficient two-side planning for apartments and project kitchens where movement has to stay clear.",
     meta: "Ideal for narrow rooms",
@@ -54,6 +58,7 @@ const layouts: LayoutCard[] = [
   },
   {
     no: "04",
+    slug: "u-shape-kitchen",
     title: "U Shape Kitchen",
     copy: "Maximum storage and preparation space for larger homes, villas, and high-use family kitchens.",
     meta: "High-storage premium plan",
@@ -62,6 +67,7 @@ const layouts: LayoutCard[] = [
   },
   {
     no: "05",
+    slug: "island-kitchen",
     title: "Island Kitchen",
     copy: "A premium open-plan format for villas, show flats, and homes where the kitchen is a feature space.",
     meta: "3D preview recommended",
@@ -70,6 +76,7 @@ const layouts: LayoutCard[] = [
   },
   {
     no: "06",
+    slug: "commercial-counters",
     title: "Commercial Counters",
     copy: "Durable modular counters and service areas for offices, studios, hospitality, and retail fit-outs.",
     meta: "Quoted by project scope",
@@ -170,6 +177,25 @@ const proofSnippets = [
   "Premium kitchen rollout for 100+ flats in a Pune project, delivered with batch production and site-ready checklists.",
   "Villa kitchen with island format and 3D preview for homeowners.",
   "Commercial pantry and service counter package coordinated with appliance and countertop requirements.",
+];
+
+const projectChannels = [
+  {
+    label: "Builders",
+    intent: "I am a builder and want B2B modular kitchen quotation support.",
+  },
+  {
+    label: "Architects",
+    intent: "I am an architect and want modular kitchen specification support.",
+  },
+  {
+    label: "Dealers",
+    intent: "I am a dealer and want modular kitchen catalogue and quotation support.",
+  },
+  {
+    label: "Contractors",
+    intent: "I am a contractor and want modular kitchen project execution support.",
+  },
 ];
 
 const businessSchema = {
@@ -407,23 +433,16 @@ function CatalogueGrid() {
       </div>
       <div className="filterbar reveal reveal--late" aria-label="Catalogue categories">
         <a href="#catalogue">All</a>
-        <a href="#individual">Modular kitchen</a>
-        <a href="#b2b">Project kitchens</a>
-        <a
-          href={whatsappHref(
-            `${whatsappMessages.default} I want to discuss commercial counters.`,
-          )}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Commercial counters
-        </a>
+        <a href="#straight-kitchen">Modular kitchen</a>
+        <a href="#parallel-kitchen">Project kitchens</a>
+        <a href="#commercial-counters">Commercial counters</a>
       </div>
       <div className="catalogue__grid">
         {layouts.map((item) => (
           <a
             className="catalogue__card reveal"
             href={whatsappHref(`${whatsappMessages.default} ${item.intent}`)}
+            id={item.slug}
             key={item.no}
             target="_blank"
             rel="noreferrer"
@@ -544,9 +563,16 @@ function ProofSection() {
         <h2>Proven on projects and private homes.</h2>
       </div>
       <div className="proof__grid">
-        <div className="proof__logos reveal" aria-label="Client logo placeholders">
-          {["Builders", "Architects", "Dealers", "Contractors"].map((label) => (
-            <span key={label}>{label}</span>
+        <div className="proof__logos reveal" aria-label="Project enquiry channels">
+          {projectChannels.map((channel) => (
+            <a
+              href={whatsappHref(`${whatsappMessages.default} ${channel.intent}`)}
+              key={channel.label}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {channel.label}
+            </a>
           ))}
         </div>
         <div className="proof__snippets">
