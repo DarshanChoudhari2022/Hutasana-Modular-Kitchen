@@ -19,19 +19,43 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-kitchen-designs.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hutasana-kitchen-designs.dsc1411.chatgpt.site"),
-  title: "Hutasana Intelligent Kitchen Designs LLP",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Hutasana Intelligent Kitchen Designs LLP",
+    template: "%s | Hutasana Intelligent Kitchen Designs LLP",
+  },
   description:
-    "Production-ready modular kitchen catalogue with B2B quotations, individual kitchen planning, technical specifications, and WhatsApp enquiry.",
+    "Premium modular kitchen design, B2B project quotations, technical specifications, and individual kitchen planning by Hutasana Intelligent Kitchen Designs LLP.",
+  applicationName: "Hutasana Kitchen Designs",
+  authors: [{ name: "Hutasana Intelligent Kitchen Designs LLP" }],
+  creator: "Hutasana Intelligent Kitchen Designs LLP",
+  publisher: "Hutasana Intelligent Kitchen Designs LLP",
+  keywords: [
+    "modular kitchen",
+    "modular kitchen design",
+    "B2B kitchen quotation",
+    "kitchen catalogue",
+    "kitchen interiors",
+    "Hutasana",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Hutasana Intelligent Kitchen Designs LLP",
     title: "Hutasana Intelligent Kitchen Designs LLP",
     description:
-      "B2B quotations and individual kitchen planning with catalogue layouts, finish packages, technical specifications, and direct WhatsApp enquiry.",
+      "Premium modular kitchen catalogue for B2B projects and individual homes, with technical details, finish directions, and direct WhatsApp quotation enquiry.",
     images: ["/og.png"],
   },
   twitter: {
@@ -40,6 +64,17 @@ export const metadata: Metadata = {
     description:
       "B2B and individual modular kitchen catalogue with technical specifications and direct quotation enquiry.",
     images: ["/og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 

@@ -2,6 +2,8 @@ import { QuoteForm } from "./QuoteForm";
 
 const phone = "+91 9512732322";
 const cleanPhone = phone.replace(/\s/g, "");
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-kitchen-designs.vercel.app";
 const whatsapp =
   "https://wa.me/919512732322?text=Hello%20Hutasana%20Intelligent%20Kitchen%20Designs%20LLP%2C%20I%20want%20a%20modular%20kitchen%20quotation.";
 
@@ -71,7 +73,7 @@ const individual = [
   "Installation and after-sales support",
 ];
 
-const process = [
+const workflow = [
   "Share plans, photos, or measurements",
   "Survey and technical discussion",
   "Select materials, finishes, and accessories",
@@ -102,9 +104,36 @@ const finishes = [
   ["Profile glass", "Display storage, crockery zones, and show-flat moments"],
 ];
 
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: "Hutasana Intelligent Kitchen Designs LLP",
+  url: siteUrl,
+  image: `${siteUrl}/og.png`,
+  telephone: phone,
+  description:
+    "Premium modular kitchen design, B2B project quotations, technical specifications, production coordination, and installation support.",
+  areaServed: "India",
+  priceRange: "Quoted by scope",
+  makesOffer: [
+    {
+      "@type": "Offer",
+      name: "B2B modular kitchen project quotation",
+    },
+    {
+      "@type": "Offer",
+      name: "Individual modular kitchen design and planning",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+      />
       <header className="topbar">
         <div className="topbar__inner">
           <span>Engineered modular kitchens for projects and private homes</span>
@@ -329,7 +358,7 @@ export default function Home() {
           <h2>From first enquiry to fitted kitchen.</h2>
         </div>
         <div className="process__steps">
-          {process.map((item, index) => (
+          {workflow.map((item, index) => (
             <div className="reveal" key={item}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{item}</p>
