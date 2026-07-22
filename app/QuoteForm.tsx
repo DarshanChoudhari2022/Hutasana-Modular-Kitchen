@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-const phoneNumber = "919512732322";
+import { whatsappHref, whatsappMessages } from "./contact";
 
 export function QuoteForm() {
   const [status, setStatus] = useState("");
@@ -11,9 +11,8 @@ export function QuoteForm() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const message = [
-      "Hello Hutasana Intelligent Kitchen Designs LLP,",
+      whatsappMessages.general,
       "",
-      "I want a modular kitchen quotation.",
       `Name: ${form.get("name") || ""}`,
       `Enquiry type: ${form.get("type") || ""}`,
       `Phone / email: ${form.get("contact") || ""}`,
@@ -23,11 +22,7 @@ export function QuoteForm() {
     ].join("\n");
 
     setStatus("Opening WhatsApp with your quotation request...");
-    window.open(
-      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    window.open(whatsappHref(message), "_blank", "noopener,noreferrer");
   }
 
   return (

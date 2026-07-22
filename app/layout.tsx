@@ -25,11 +25,12 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Hutasana Intelligent Kitchen Designs LLP",
+    default:
+      "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens for Projects and Homes",
     template: "%s | Hutasana Intelligent Kitchen Designs LLP",
   },
   description:
-    "Premium modular kitchen design, B2B project quotations, technical specifications, and individual kitchen planning by Hutasana Intelligent Kitchen Designs LLP.",
+    "Premium modular kitchen design, specification, quotation, production, and installation for B2B projects and individual homes by Hutasana Intelligent Kitchen Designs LLP.",
   applicationName: "Hutasana Kitchen Designs",
   authors: [{ name: "Hutasana Intelligent Kitchen Designs LLP" }],
   creator: "Hutasana Intelligent Kitchen Designs LLP",
@@ -53,16 +54,18 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Hutasana Intelligent Kitchen Designs LLP",
-    title: "Hutasana Intelligent Kitchen Designs LLP",
+    title:
+      "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
     description:
-      "Premium modular kitchen catalogue for B2B projects and individual homes, with technical details, finish directions, and direct WhatsApp quotation enquiry.",
+      "Design, specification, quotation, production, and installation for B2B modular kitchen projects and individual homes.",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hutasana Intelligent Kitchen Designs LLP",
+    title:
+      "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
     description:
-      "B2B and individual modular kitchen catalogue with technical specifications and direct quotation enquiry.",
+      "B2B and individual modular kitchen catalogue with technical specifications, workflow clarity, and WhatsApp quotation enquiry.",
     images: ["/og.png"],
   },
   robots: {
