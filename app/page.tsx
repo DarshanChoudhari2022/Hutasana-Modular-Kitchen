@@ -8,7 +8,7 @@ import {
 } from "./contact";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-kitchen-designs.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-modular-kitchen.vercel.app";
 
 type LayoutCard = {
   no: string;
@@ -203,7 +203,7 @@ const businessSchema = {
   "@type": "HomeAndConstructionBusiness",
   name: "Hutasana Intelligent Kitchen Designs LLP",
   url: siteUrl,
-  image: `${siteUrl}/og.png`,
+  image: `${siteUrl}/og-logo.png`,
   telephone: phoneDisplay,
   description:
     "Premium modular kitchen design, B2B project quotations, technical specifications, production coordination, and installation support.",

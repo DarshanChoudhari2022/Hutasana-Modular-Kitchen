@@ -62,7 +62,7 @@ Set this to the final client domain before production launch. It is used by cano
 - `app/robots.ts`: robots route.
 - `app/manifest.ts`: web app manifest.
 - `public/assets/`: kitchen visuals used across the site.
-- `public/og.png`: social sharing image.
+- `public/og-logo.png`: social sharing image with the Hutasana logo mark.
 
 ## Updating Business Details
 
@@ -89,5 +89,5 @@ B2B and individual service points:
 - `npm test` passes.
 - `NEXT_PUBLIC_SITE_URL` is set on production hosting.
 - Contact number and WhatsApp number are confirmed by the client.
-- Social preview image `public/og.png` is approved.
+- Social preview image `public/og-logo.png` is approved.
 - Final domain is connected and SSL is active.

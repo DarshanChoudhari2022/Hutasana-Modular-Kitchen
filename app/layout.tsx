@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-kitchen-designs.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-modular-kitchen.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -58,7 +58,14 @@ export const metadata: Metadata = {
       "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
     description:
       "Design, specification, quotation, production, and installation for B2B modular kitchen projects and individual homes.",
-    images: ["/og.png"],
+    images: [
+      {
+        url: "/og-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Hutasana Intelligent Kitchen Designs LLP logo and modular kitchen preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -66,7 +73,7 @@ export const metadata: Metadata = {
       "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
     description:
       "B2B and individual modular kitchen catalogue with technical specifications, workflow clarity, and WhatsApp quotation enquiry.",
-    images: ["/og.png"],
+    images: ["/og-logo.png"],
   },
   robots: {
     index: true,
