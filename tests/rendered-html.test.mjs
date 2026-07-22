@@ -80,3 +80,15 @@ test("quote form opens WhatsApp with client enquiry fields", async () => {
   assert.match(quoteForm, /Kitchen or project size/);
   assert.match(quoteForm, /Your details stay on your device/);
 });
+
+test("catalogue filters and layout cards are clickable links", async () => {
+  const page = await readProjectFile("app/page.tsx");
+
+  assert.match(page, /<a href="#catalogue">All<\/a>/);
+  assert.match(page, /<a href="#individual">Modular kitchen<\/a>/);
+  assert.match(page, /<a href="#b2b">Project kitchens<\/a>/);
+  assert.match(page, /Commercial counters/);
+  assert.match(page, /className="catalogue__card reveal"/);
+  assert.match(page, /aria-label=\{`Enquire on WhatsApp about \$\{item\.title\}`\}/);
+  assert.match(page, /whatsappHref\(`\$\{whatsappMessages\.default\} \$\{item\.intent\}`\)/);
+});

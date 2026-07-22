@@ -611,12 +611,20 @@ main {
   color: #312e29;
 }
 
-.filterbar span {
+.filterbar a {
   white-space: nowrap;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
 }
 
-.filterbar span:first-child {
+.filterbar a:first-child {
   color: var(--gold);
+}
+
+.filterbar a:hover {
+  color: var(--olive);
+  transform: translateY(-2px);
 }
 
 .catalogue__grid {
@@ -630,6 +638,7 @@ main {
   padding: 30px;
   display: flex;
   flex-direction: column;
+  color: inherit;
   background: rgba(255, 250, 241, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow: 0 20px 58px rgba(44, 35, 25, 0.08);

@@ -16,6 +16,7 @@ type LayoutCard = {
   copy: string;
   meta: string;
   image: string;
+  intent: string;
 };
 
 type TextCard = {
@@ -33,6 +34,7 @@ const layouts: LayoutCard[] = [
     copy: "A clean single-wall system for compact homes, staff housing, rental units, and utility kitchens.",
     meta: "8 ft to 14 ft typical run",
     image: heroImage,
+    intent: "I am interested in a Straight Kitchen layout.",
   },
   {
     no: "02",
@@ -40,6 +42,7 @@ const layouts: LayoutCard[] = [
     copy: "The most practical format for everyday homes, with a strong work triangle and corner storage.",
     meta: "Best for 8x8 ft and above",
     image: detailImage,
+    intent: "I am interested in an L Shape Kitchen layout.",
   },
   {
     no: "03",
@@ -47,6 +50,7 @@ const layouts: LayoutCard[] = [
     copy: "Efficient two-side planning for apartments and project kitchens where movement has to stay clear.",
     meta: "Ideal for narrow rooms",
     image: heroImage,
+    intent: "I am interested in a Parallel Kitchen layout.",
   },
   {
     no: "04",
@@ -54,6 +58,7 @@ const layouts: LayoutCard[] = [
     copy: "Maximum storage and preparation space for larger homes, villas, and high-use family kitchens.",
     meta: "High-storage premium plan",
     image: detailImage,
+    intent: "I am interested in a U Shape Kitchen layout.",
   },
   {
     no: "05",
@@ -61,6 +66,7 @@ const layouts: LayoutCard[] = [
     copy: "A premium open-plan format for villas, show flats, and homes where the kitchen is a feature space.",
     meta: "3D preview recommended",
     image: heroImage,
+    intent: "I am interested in an Island Kitchen layout.",
   },
   {
     no: "06",
@@ -68,6 +74,7 @@ const layouts: LayoutCard[] = [
     copy: "Durable modular counters and service areas for offices, studios, hospitality, and retail fit-outs.",
     meta: "Quoted by project scope",
     image: detailImage,
+    intent: "I am interested in Commercial Counters.",
   },
 ];
 
@@ -399,14 +406,29 @@ function CatalogueGrid() {
         <h2>Layout systems for every site condition.</h2>
       </div>
       <div className="filterbar reveal reveal--late" aria-label="Catalogue categories">
-        <span>All</span>
-        <span>Modular kitchen</span>
-        <span>Project kitchens</span>
-        <span>Commercial counters</span>
+        <a href="#catalogue">All</a>
+        <a href="#individual">Modular kitchen</a>
+        <a href="#b2b">Project kitchens</a>
+        <a
+          href={whatsappHref(
+            `${whatsappMessages.default} I want to discuss commercial counters.`,
+          )}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Commercial counters
+        </a>
       </div>
       <div className="catalogue__grid">
         {layouts.map((item) => (
-          <article className="catalogue__card reveal" key={item.no}>
+          <a
+            className="catalogue__card reveal"
+            href={whatsappHref(`${whatsappMessages.default} ${item.intent}`)}
+            key={item.no}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Enquire on WhatsApp about ${item.title}`}
+          >
             <div className="catalogue__media">
               <Image
                 src={item.image}
@@ -419,7 +441,7 @@ function CatalogueGrid() {
             <h3>{item.title}</h3>
             <p>{item.copy}</p>
             <strong>{item.meta}</strong>
-          </article>
+          </a>
         ))}
       </div>
     </section>
