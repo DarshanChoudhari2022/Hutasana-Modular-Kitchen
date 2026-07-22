@@ -19,6 +19,8 @@ test("site source contains the complete handover sections", async () => {
     "Technical details",
     "Workflow",
     "Start enquiry",
+    "Contact Info",
+    "Suratwalla Mark Plazzo",
     "Proven on projects and private homes",
     "HomeAndConstructionBusiness",
   ]) {
@@ -69,23 +71,28 @@ test("metadata, sitemap, robots, and manifest are production ready", async () =>
 });
 
 test("quote form opens WhatsApp with client enquiry fields", async () => {
-  const [quoteForm, contact] = await Promise.all([
+  const [quoteForm, contact, page] = await Promise.all([
     readProjectFile("app/QuoteForm.tsx"),
     readProjectFile("app/contact.ts"),
+    readProjectFile("app/page.tsx"),
   ]);
 
   assert.match(contact, /\+91 83909 98088/);
   assert.match(contact, /tel:\+918390998088/);
   assert.match(contact, /918390998088/);
+  assert.match(contact, /Building B, Office 317, Suratwalla Mark Plazzo/);
   assert.doesNotMatch(contact, /9512732322|919512732322/);
   assert.match(contact, /B2B project enquiry/);
   assert.match(contact, /home kitchen/);
   assert.match(contact, /sharing my details/);
   assert.match(quoteForm, /whatsappHref\(message\)/);
-  assert.match(quoteForm, /B2B quotation/);
-  assert.match(quoteForm, /Individual kitchen/);
-  assert.match(quoteForm, /Kitchen or project size/);
+  assert.match(quoteForm, /All fields are required/);
+  assert.match(quoteForm, /name="email"/);
+  assert.match(quoteForm, /name="service"/);
+  assert.match(quoteForm, /Prepare enquiry/);
   assert.match(quoteForm, /Your details stay on your device/);
+  assert.match(page, /officeAddress/);
+  assert.match(page, /PostalAddress/);
 });
 
 test("catalogue filters and layout cards are clickable links", async () => {

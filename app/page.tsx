@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { QuoteForm } from "./QuoteForm";
 import {
+  officeAddress,
   phoneDisplay,
   phoneHref,
   whatsappHref,
@@ -205,6 +206,14 @@ const businessSchema = {
   url: siteUrl,
   image: `${siteUrl}/og-logo.png`,
   telephone: phoneDisplay,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Building B, Office 317, Suratwalla Mark Plazzo, S. No. 27",
+    addressLocality: "Hinjawadi, Pune",
+    addressRegion: "Maharashtra",
+    postalCode: "411057",
+    addressCountry: "IN",
+  },
   description:
     "Premium modular kitchen design, B2B project quotations, technical specifications, production coordination, and installation support.",
   areaServed: "India",
@@ -591,23 +600,31 @@ function ProofSection() {
 function ContactSection() {
   return (
     <section className="contact section" id="contact">
-      <div className="reveal">
+      <div className="contact__info reveal">
         <p className="eyebrow">Start enquiry</p>
-        <h2>Send your plan, photos, or quotation requirement.</h2>
+        <h2>Contact Info</h2>
         <p>
-          Fill this short form and it opens WhatsApp with a prepared message.
-          You can attach site photos, drawings, or BOQ files after WhatsApp
-          opens.
+          Need assistance with a project quotation, home kitchen plan, site
+          visit, or material selection? Share your enquiry and the Hutasana
+          team will prepare the next step on WhatsApp.
         </p>
-        <div className="contact__direct">
-          <a href={phoneHref}>Call {phoneDisplay}</a>
+        <div className="contact__details" aria-label="Hutasana contact details">
+          <a href={phoneHref}>
+            <span aria-hidden="true">Call</span>
+            {phoneDisplay}
+          </a>
           <a
             href={whatsappHref(whatsappMessages.default)}
             target="_blank"
             rel="noreferrer"
           >
-            Open WhatsApp
+            <span aria-hidden="true">WhatsApp</span>
+            Open WhatsApp enquiry
           </a>
+          <address>
+            <span aria-hidden="true">Address</span>
+            {officeAddress}
+          </address>
         </div>
       </div>
       <QuoteForm />
@@ -648,6 +665,7 @@ function Footer() {
           >
             WhatsApp quotation
           </a>
+          <address>{officeAddress}</address>
         </div>
       </div>
     </footer>

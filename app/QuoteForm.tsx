@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-import { whatsappHref, whatsappMessages } from "./contact";
+import { officeAddress, whatsappHref, whatsappMessages } from "./contact";
 
 export function QuoteForm() {
   const [status, setStatus] = useState("");
@@ -14,26 +14,33 @@ export function QuoteForm() {
       whatsappMessages.general,
       "",
       `Name: ${form.get("name") || ""}`,
-      `Enquiry type: ${form.get("type") || ""}`,
-      `Phone / email: ${form.get("contact") || ""}`,
-      `City: ${form.get("city") || ""}`,
-      `Kitchen size / project size: ${form.get("size") || ""}`,
-      `Requirement: ${form.get("message") || ""}`,
+      `Email: ${form.get("email") || ""}`,
+      `Service: ${form.get("service") || ""}`,
+      `Message: ${form.get("message") || ""}`,
+      `Office address: ${officeAddress}`,
     ].join("\n");
 
-    setStatus("Opening WhatsApp with your quotation request...");
+    setStatus("Opening WhatsApp with your prepared enquiry...");
     window.open(whatsappHref(message), "_blank", "noopener,noreferrer");
   }
 
   return (
     <form className="contact__form" onSubmit={submitQuote}>
+      <p className="contact__required">All fields are required.</p>
       <label>
         Name
         <input type="text" name="name" placeholder="Your name" required />
       </label>
       <label>
-        Enquiry type
-        <select name="type" defaultValue="B2B quotation">
+        Email
+        <input type="email" name="email" placeholder="name@example.com" required />
+      </label>
+      <label>
+        Service
+        <select name="service" defaultValue="" required>
+          <option value="" disabled>
+            Select a service
+          </option>
           <option>B2B quotation</option>
           <option>Individual kitchen</option>
           <option>Commercial kitchen</option>
@@ -42,35 +49,14 @@ export function QuoteForm() {
         </select>
       </label>
       <label>
-        Phone or email
-        <input
-          type="text"
-          name="contact"
-          placeholder="How should we contact you?"
-          required
-        />
-      </label>
-      <label>
-        City
-        <input type="text" name="city" placeholder="Your city / project location" />
-      </label>
-      <label>
-        Kitchen or project size
-        <input
-          type="text"
-          name="size"
-          placeholder="Example: 10x8 ft, 25 flats, 2 counters"
-        />
-      </label>
-      <label>
-        Requirement
+        Message
         <textarea
           name="message"
-          placeholder="Tell us layout, materials, appliance list, budget, and timeline."
+          placeholder="Tell us about the project, layout, material preference, timeline, or site visit requirement."
           required
         />
       </label>
-      <button type="submit">Send quotation request on WhatsApp</button>
+      <button type="submit">Prepare enquiry</button>
       <p className="contact__note" role="status">
         {status || "Your details stay on your device until you choose to send them on WhatsApp."}
       </p>

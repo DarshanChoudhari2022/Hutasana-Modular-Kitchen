@@ -1,6 +1,8 @@
 export const phoneDisplay = "+91 83909 98088";
 export const phoneHref = "tel:+918390998088";
 export const whatsappNumber = "918390998088";
+export const officeAddress =
+  "Building B, Office 317, Suratwalla Mark Plazzo, S. No. 27, Mulshi, Hinjawadi, Pune 411057, India";
 
 const baseMessage =
   "Hello Hutasana Intelligent Kitchen Designs LLP, I want a modular kitchen quotation.";
