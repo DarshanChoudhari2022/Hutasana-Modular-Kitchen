@@ -80,6 +80,28 @@ const process = [
   "Delivery, installation, and handover",
 ];
 
+const studio = [
+  {
+    title: "Space intelligence",
+    copy: "Work zones, appliance clearances, storage access, and circulation are planned before finishes are selected.",
+  },
+  {
+    title: "Specification control",
+    copy: "Materials, shutters, counters, hardware, accessories, and installation scope are documented for clean approvals.",
+  },
+  {
+    title: "Project-ready output",
+    copy: "B2B teams receive practical quotation inputs, drawing notes, production scope, and handover clarity.",
+  },
+];
+
+const finishes = [
+  ["Matte charcoal", "Anti-fingerprint shutters for premium modern kitchens"],
+  ["Warm walnut", "Open shelves, niches, and breakfast counter warmth"],
+  ["Quartz white", "Durable counters with clean contemporary contrast"],
+  ["Profile glass", "Display storage, crockery zones, and show-flat moments"],
+];
+
 export default function Home() {
   return (
     <main>
@@ -154,6 +176,22 @@ export default function Home() {
         <div>
           <strong>B2B</strong>
           <span>Bulk quotation support</span>
+        </div>
+      </section>
+
+      <section className="studio section" aria-label="Design studio strengths">
+        <div className="section__head reveal">
+          <p className="eyebrow">Studio method</p>
+          <h2>A kitchen is designed twice: first for use, then for beauty.</h2>
+        </div>
+        <div className="studio__grid">
+          {studio.map((item, index) => (
+            <article className="reveal" key={item.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -245,6 +283,28 @@ export default function Home() {
             appliance clearances are planned together so the final kitchen is
             easy to install and comfortable to use every day.
           </p>
+        </div>
+      </section>
+
+      <section className="materials section" aria-label="Material and finish palette">
+        <div className="materials__copy reveal">
+          <p className="eyebrow">Finish direction</p>
+          <h2>Premium palettes without vague selections.</h2>
+          <p>
+            Every quotation can be built around a defined finish direction, so
+            cost, maintenance, and visual impact are clear before production.
+          </p>
+        </div>
+        <div className="materials__board reveal reveal--late">
+          {finishes.map(([title, copy]) => (
+            <article key={title}>
+              <span aria-hidden="true" />
+              <div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
