@@ -20,28 +20,28 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-modular-kitchen.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hustashana-modular-kitchen.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:
-      "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens for Projects and Homes",
-    template: "%s | Hutasana Intelligent Kitchen Designs LLP",
+      "Hustashana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens for Projects and Homes",
+    template: "%s | Hustashana Intelligent Kitchen Designs LLP",
   },
   description:
-    "Premium modular kitchen design, specification, quotation, production, and installation for B2B projects and individual homes by Hutasana Intelligent Kitchen Designs LLP.",
-  applicationName: "Hutasana Kitchen Designs",
-  authors: [{ name: "Hutasana Intelligent Kitchen Designs LLP" }],
-  creator: "Hutasana Intelligent Kitchen Designs LLP",
-  publisher: "Hutasana Intelligent Kitchen Designs LLP",
+    "Premium modular kitchen design, specification, quotation, production, and installation for B2B projects and individual homes by Hustashana Intelligent Kitchen Designs LLP.",
+  applicationName: "Hustashana Kitchen Designs",
+  authors: [{ name: "Hustashana Intelligent Kitchen Designs LLP" }],
+  creator: "Hustashana Intelligent Kitchen Designs LLP",
+  publisher: "Hustashana Intelligent Kitchen Designs LLP",
   keywords: [
     "modular kitchen",
     "modular kitchen design",
     "B2B kitchen quotation",
     "kitchen catalogue",
     "kitchen interiors",
-    "Hutasana",
+    "Hustashana",
   ],
   alternates: {
     canonical: "/",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "Hutasana Intelligent Kitchen Designs LLP",
+    siteName: "Hustashana Intelligent Kitchen Designs LLP",
     title:
-      "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
+      "Hustashana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
     description:
       "Design, specification, quotation, production, and installation for B2B modular kitchen projects and individual homes.",
     images: [
@@ -63,14 +63,14 @@ export const metadata: Metadata = {
         url: "/og-logo.png",
         width: 1200,
         height: 630,
-        alt: "Hutasana Intelligent Kitchen Designs LLP logo and modular kitchen preview",
+        alt: "Hustashana Intelligent Kitchen Designs LLP logo and modular kitchen preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Hutasana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
+      "Hustashana Intelligent Kitchen Designs LLP - Engineered Modular Kitchens",
     description:
       "B2B and individual modular kitchen catalogue with technical specifications, workflow clarity, and WhatsApp quotation enquiry.",
     images: ["/og-logo.png"],

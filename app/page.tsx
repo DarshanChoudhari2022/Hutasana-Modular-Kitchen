@@ -9,7 +9,7 @@ import {
 } from "./contact";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-modular-kitchen.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hustashana-modular-kitchen.vercel.app";
 
 type LayoutCard = {
   no: string;
@@ -199,10 +199,44 @@ const projectChannels = [
   },
 ];
 
+const premiumDetails = [
+  {
+    title: "CAD-ready planning",
+    copy: "Measured layouts, service points, appliance clearances, shutter swing, and counter lines are resolved before quotation approval.",
+    meta: "2D + 3D",
+    intent: "I want CAD-ready modular kitchen planning.",
+  },
+  {
+    title: "Hardware intelligence",
+    copy: "Every hinge, tandem, lift-up, pull-out, corner unit, and tall storage module is selected around daily usage, not just appearance.",
+    meta: "Soft-close systems",
+    intent: "I want guidance for premium kitchen hardware and accessories.",
+  },
+  {
+    title: "Material board approval",
+    copy: "Finish direction, shutter material, countertop, profile, glass, handle, and accessory choices are documented so there is no vague handover.",
+    meta: "Palette control",
+    intent: "I want material and finish selection support.",
+  },
+  {
+    title: "Site-ready execution",
+    copy: "B2B and home projects get checklist-led production, dispatch coordination, installation notes, and clear after-sales responsibility.",
+    meta: "Handover checklist",
+    intent: "I want site-ready modular kitchen execution support.",
+  },
+];
+
+const premiumStrip = [
+  "Appliance matrix",
+  "Countertop coordination",
+  "Storage zoning",
+  "Dispatch checklist",
+];
+
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  name: "Hutasana Intelligent Kitchen Designs LLP",
+  name: "Hustashana Intelligent Kitchen Designs LLP",
   url: siteUrl,
   image: `${siteUrl}/og-logo.png`,
   telephone: phoneDisplay,
@@ -245,15 +279,16 @@ function Header() {
       </header>
 
       <nav className="nav" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="Hutasana home">
+        <a className="brand" href="#top" aria-label="Hustashana home">
           <span className="brand__mark">H</span>
           <span>
-            <strong>Hutasana</strong>
+            <strong>Hustashana</strong>
             <small>Intelligent Kitchen Designs LLP</small>
           </span>
         </a>
         <div className="nav__links">
           <a href="#catalogue">Catalogue</a>
+          <a href="#premium">Premium</a>
           <a href="#technical">Technical</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
@@ -269,7 +304,7 @@ function HeroSection() {
       <Image
         className="hero__image"
         src={heroImage}
-        alt="Premium modular kitchen designed by Hutasana"
+        alt="Premium modular kitchen designed by Hustashana"
         fill
         priority
         sizes="100vw"
@@ -278,7 +313,7 @@ function HeroSection() {
         <p className="eyebrow">Intelligent modular kitchen studio</p>
         <h1>Precision kitchens for homes and projects.</h1>
         <p>
-          Hutasana brings design, specification, quotation, production, and
+          Hustashana brings design, specification, quotation, production, and
           installation into one refined workflow for homeowners and B2B teams.
         </p>
         <div className="hero__chips" aria-label="Core services">
@@ -429,6 +464,51 @@ function AudienceSplit() {
           Plan my kitchen
         </a>
       </article>
+    </section>
+  );
+}
+
+function PremiumDetails() {
+  return (
+    <section className="premium section" id="premium">
+      <div className="section__head reveal">
+        <p className="eyebrow">Premium build system</p>
+        <h2>Premium details built into every handover.</h2>
+        <p>
+          A refined kitchen depends on invisible decisions: the way drawers
+          open, the way appliances breathe, the way materials age, and the way
+          site teams receive instructions.
+        </p>
+      </div>
+      <div className="premium__grid">
+        {premiumDetails.map((item, index) => (
+          <a
+            className="premium__card reveal"
+            href={whatsappHref(`${whatsappMessages.default} ${item.intent}`)}
+            key={item.title}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Enquire about ${item.title}`}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{item.meta}</strong>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </a>
+        ))}
+      </div>
+      <div className="premium__strip reveal reveal--late" aria-label="Premium handover inclusions">
+        {premiumStrip.map((item) => (
+          <a
+            href={whatsappHref(`${whatsappMessages.default} I want details about ${item}.`)}
+            key={item}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {item}
+          </a>
+        ))}
+      </div>
     </section>
   );
 }
@@ -605,10 +685,10 @@ function ContactSection() {
         <h2>Contact Info</h2>
         <p>
           Need assistance with a project quotation, home kitchen plan, site
-          visit, or material selection? Share your enquiry and the Hutasana
+          visit, or material selection? Share your enquiry and the Hustashana
           team will prepare the next step on WhatsApp.
         </p>
-        <div className="contact__details" aria-label="Hutasana contact details">
+        <div className="contact__details" aria-label="Hustashana contact details">
           <a href={phoneHref}>
             <span aria-hidden="true">Call</span>
             {phoneDisplay}
@@ -637,10 +717,10 @@ function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div>
-          <a className="brand brand--footer" href="#top" aria-label="Hutasana home">
+          <a className="brand brand--footer" href="#top" aria-label="Hustashana home">
             <span className="brand__mark">H</span>
             <span>
-              <strong>Hutasana</strong>
+              <strong>Hustashana</strong>
               <small>Intelligent Kitchen Designs LLP</small>
             </span>
           </a>
@@ -652,6 +732,7 @@ function Footer() {
         <div>
           <h3>Explore</h3>
           <a href="#catalogue">Catalogue</a>
+          <a href="#premium">Premium build system</a>
           <a href="#technical">Technical details</a>
           <a href="#process">Workflow</a>
         </div>
@@ -707,6 +788,7 @@ export default function Home() {
       <StudioMethod />
       <AboutSection />
       <AudienceSplit />
+      <PremiumDetails />
       <CatalogueGrid />
       <ShowcaseSection />
       <FinishPalette />

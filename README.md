@@ -1,6 +1,6 @@
-# Hutasana Intelligent Kitchen Designs LLP
+# Hustashana Intelligent Kitchen Designs LLP
 
-Production-ready modular kitchen catalogue website for Hutasana Intelligent Kitchen Designs LLP.
+Production-ready modular kitchen catalogue website for Hustashana Intelligent Kitchen Designs LLP.
 
 The site serves two audiences:
 
@@ -62,7 +62,7 @@ Set this to the final client domain before production launch. It is used by cano
 - `app/robots.ts`: robots route.
 - `app/manifest.ts`: web app manifest.
 - `public/assets/`: kitchen visuals used across the site.
-- `public/og-logo.png`: social sharing image with the Hutasana logo mark.
+- `public/og-logo.png`: social sharing image with the Hustashana logo mark.
 
 ## Updating Business Details
 
