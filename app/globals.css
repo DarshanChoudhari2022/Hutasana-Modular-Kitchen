@@ -983,6 +983,11 @@ main {
 
 .contact {
   align-items: start;
+  width: 100%;
+  padding-inline: max(16px, calc((100vw - 1200px) / 2));
+  background:
+    radial-gradient(circle at 12% 18%, rgba(35, 102, 87, 0.12), transparent 24rem),
+    linear-gradient(180deg, rgba(255, 250, 241, 0.48), rgba(238, 231, 220, 0.72));
 }
 
 .proof {
@@ -1065,11 +1070,15 @@ main {
 }
 
 .contact__info {
-  padding-top: clamp(8px, 3vw, 34px);
+  padding: clamp(28px, 4.4vw, 54px);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 241, 0.88), rgba(239, 230, 217, 0.72));
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  box-shadow: 0 22px 70px rgba(44, 35, 25, 0.08);
 }
 
 .contact__info h2 {
-  font-size: clamp(2.1rem, 4.8vw, 4.8rem);
+  font-size: clamp(2.1rem, 4.3vw, 4.25rem);
 }
 
 .contact__details {
@@ -1085,7 +1094,9 @@ main {
   gap: 14px;
   align-items: start;
   margin: 0;
+  padding: 18px 0;
   color: var(--ink);
+  border-top: 1px solid var(--line);
   font-style: normal;
   font-size: clamp(1rem, 1.25vw, 1.1rem);
   line-height: 1.65;
@@ -1101,12 +1112,14 @@ main {
 .contact__form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  gap: 22px;
   padding: clamp(30px, 4.4vw, 58px);
-  background: #73acd5;
-  border: 0;
-  border-radius: 22px;
-  box-shadow: 0 32px 90px rgba(40, 83, 115, 0.26);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(197, 132, 69, 0.22), transparent 24rem),
+    linear-gradient(135deg, #0b0b0a, #191510 72%, #251a12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  box-shadow: var(--shadow);
 }
 
 .contact__required {
@@ -1138,22 +1151,31 @@ main {
 .contact__form textarea {
   width: 100%;
   min-height: 58px;
-  border: 0;
-  border-radius: 14px;
-  background: rgba(244, 249, 253, 0.95);
-  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  background: rgba(255, 250, 241, 0.08);
+  color: white;
   padding: 15px 18px;
   font: inherit;
   outline: none;
   transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: rgba(255, 250, 241, 0.44);
+}
+
+.contact__form option {
+  color: var(--ink);
+}
+
 .contact__form input:focus,
 .contact__form select:focus,
 .contact__form textarea:focus {
-  border-color: rgba(35, 102, 87, 0.65);
-  background: white;
-  box-shadow: 0 0 0 4px rgba(17, 52, 77, 0.16);
+  border-color: rgba(240, 192, 133, 0.62);
+  background: rgba(255, 250, 241, 0.12);
+  box-shadow: 0 0 0 4px rgba(240, 192, 133, 0.12);
 }
 
 .contact__form textarea {
@@ -1165,11 +1187,12 @@ main {
   width: fit-content;
   min-width: 220px;
   min-height: 64px;
-  background: #102b45;
+  background: linear-gradient(135deg, #148963, var(--olive));
   border: 0;
-  border-radius: 12px;
+  border-radius: 0;
   color: white;
   cursor: pointer;
+  box-shadow: 0 16px 38px rgba(18, 111, 80, 0.24);
 }
 
 .contact__note {
@@ -1311,13 +1334,9 @@ main {
 }
 
 @media (max-width: 980px) {
-  .topbar__inner > span,
+  .topbar,
   .nav__links {
     display: none;
-  }
-
-  .topbar__inner {
-    justify-content: center;
   }
 
   .nav {
@@ -1424,10 +1443,6 @@ main {
   .topbar__inner div {
     gap: 14px;
     font-size: 0.66rem;
-  }
-
-  .topbar__inner div a:not(:last-child) {
-    display: none;
   }
 
   .brand__mark {
