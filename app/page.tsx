@@ -9,7 +9,7 @@ import {
 } from "./contact";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hustashana-modular-kitchen.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hutasana-modular-kitchen.vercel.app";
 
 type LayoutCard = {
   no: string;
@@ -236,7 +236,7 @@ const premiumStrip = [
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  name: "Hustashana Intelligent Kitchen Designs LLP",
+  name: "Hutāśana Intelligent Kitchen Designs (INDIA) LLP",
   url: siteUrl,
   image: `${siteUrl}/og-logo.png`,
   telephone: phoneDisplay,
@@ -279,11 +279,11 @@ function Header() {
       </header>
 
       <nav className="nav" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="Hustashana home">
+        <a className="brand" href="#top" aria-label="Hutāśana home">
           <span className="brand__mark">H</span>
           <span>
-            <strong>Hustashana</strong>
-            <small>Intelligent Kitchen Designs LLP</small>
+            <strong>Hutāśana</strong>
+            <small>Intelligent Kitchen Designs (INDIA) LLP</small>
           </span>
         </a>
         <div className="nav__links">
@@ -304,7 +304,7 @@ function HeroSection() {
       <Image
         className="hero__image"
         src={heroImage}
-        alt="Premium modular kitchen designed by Hustashana"
+        alt="Premium modular kitchen designed by Hutāśana"
         fill
         priority
         sizes="100vw"
@@ -313,7 +313,7 @@ function HeroSection() {
         <p className="eyebrow">Intelligent modular kitchen studio</p>
         <h1>Precision kitchens for homes and projects.</h1>
         <p>
-          Hustashana brings design, specification, quotation, production, and
+          Hutāśana brings design, specification, quotation, production, and
           installation into one refined workflow for homeowners and B2B teams.
         </p>
         <div className="hero__chips" aria-label="Core services">
@@ -685,10 +685,10 @@ function ContactSection() {
         <h2>Contact Info</h2>
         <p>
           Need assistance with a project quotation, home kitchen plan, site
-          visit, or material selection? Share your enquiry and the Hustashana
+          visit, or material selection? Share your enquiry and the Hutāśana
           team will prepare the next step on WhatsApp.
         </p>
-        <div className="contact__details" aria-label="Hustashana contact details">
+        <div className="contact__details" aria-label="Hutāśana contact details">
           <a href={phoneHref}>
             <span aria-hidden="true">Call</span>
             {phoneDisplay}
@@ -717,11 +717,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div>
-          <a className="brand brand--footer" href="#top" aria-label="Hustashana home">
+          <a className="brand brand--footer" href="#top" aria-label="Hutāśana home">
             <span className="brand__mark">H</span>
             <span>
-              <strong>Hustashana</strong>
-              <small>Intelligent Kitchen Designs LLP</small>
+              <strong>Hutāśana</strong>
+              <small>Intelligent Kitchen Designs (INDIA) LLP</small>
             </span>
           </a>
           <p>

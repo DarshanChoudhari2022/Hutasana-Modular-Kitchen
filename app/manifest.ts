@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Hustashana Intelligent Kitchen Designs LLP",
-    short_name: "Hustashana",
+    name: "Hutāśana Intelligent Kitchen Designs (INDIA) LLP",
+    short_name: "Hutāśana",
     description:
       "Premium modular kitchen catalogue, quotation, and planning for B2B projects and individual homes.",
     start_url: "/",

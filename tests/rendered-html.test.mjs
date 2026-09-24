@@ -12,7 +12,7 @@ test("site source contains the complete handover sections", async () => {
   const page = await readProjectFile("app/page.tsx");
 
   for (const text of [
-    "Hustashana Intelligent Kitchen Designs LLP",
+    "Hutāśana Intelligent Kitchen Designs (INDIA) LLP",
     "Direct B2B",
     "Individual clients",
     "Catalogue",
@@ -61,16 +61,16 @@ test("metadata, sitemap, robots, and manifest are production ready", async () =>
   assert.match(layout, /openGraph/);
   assert.match(layout, /twitter/);
   assert.match(layout, /robots/);
-  assert.match(layout, /hustashana-modular-kitchen\.vercel\.app/);
+  assert.match(layout, /hutasana-modular-kitchen\.vercel\.app/);
   assert.match(layout, /og-logo\.png/);
   assert.match(layout, /width:\s*1200/);
   assert.match(layout, /height:\s*630/);
-  assert.doesNotMatch(layout, /hustashana-kitchen-designs\.vercel\.app/);
+  assert.doesNotMatch(layout, /hutasana-kitchen-designs\.vercel\.app/);
   assert.match(sitemap, /MetadataRoute\.Sitemap/);
   assert.match(robots, /MetadataRoute\.Robots/);
-  assert.match(sitemap, /hustashana-modular-kitchen\.vercel\.app/);
-  assert.match(robots, /hustashana-modular-kitchen\.vercel\.app/);
-  assert.match(manifest, /Hustashana Intelligent Kitchen Designs LLP/);
+  assert.match(sitemap, /hutasana-modular-kitchen\.vercel\.app/);
+  assert.match(robots, /hutasana-modular-kitchen\.vercel\.app/);
+  assert.match(manifest, /Hutāśana Intelligent Kitchen Designs \(INDIA\) LLP/);
 });
 
 test("quote form opens WhatsApp with client enquiry fields", async () => {

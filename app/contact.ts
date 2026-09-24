@@ -5,11 +5,11 @@ export const officeAddress =
   "Building B, Office 317, Suratwalla Mark Plazzo, S. No. 27, Mulshi, Hinjawadi, Pune 411057, India";
 
 const baseMessage =
-  "Hello Hustashana Intelligent Kitchen Designs LLP, I want a modular kitchen quotation.";
+  "Hello Hutāśana Intelligent Kitchen Designs (INDIA) LLP, I want a modular kitchen quotation.";
 
 export const whatsappMessages = {
   general:
-    "Hello Hustashana Intelligent Kitchen Designs LLP, I am sharing my details for a modular kitchen quotation.",
+    "Hello Hutāśana Intelligent Kitchen Designs (INDIA) LLP, I am sharing my details for a modular kitchen quotation.",
   default: baseMessage,
   b2b: `${baseMessage} This is a B2B project enquiry.`,
   individual: `${baseMessage} This is for my home kitchen.`,
