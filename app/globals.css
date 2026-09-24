@@ -275,7 +275,6 @@ main {
 .intro__copy > p,
 .audience__panel p,
 .showcase__content p,
-.materials__copy p,
 .contact p {
   color: rgba(255, 250, 241, 0.78);
   font-size: clamp(1rem, 1.35vw, 1.12rem);
@@ -288,6 +287,7 @@ main {
 
 .intro__copy > p,
 .showcase__content p,
+.materials__copy p,
 .contact p {
   color: var(--muted);
 }

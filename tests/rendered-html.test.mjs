@@ -114,3 +114,13 @@ test("catalogue filters and layout cards are clickable links", async () => {
   assert.match(page, /Project enquiry channels/);
   assert.doesNotMatch(page, /Client logo placeholders/);
 });
+
+test("light section body copy stays readable", async () => {
+  const css = await readProjectFile("app/globals.css");
+
+  assert.match(css, /\.materials__copy p,\r?\n\.contact p \{\r?\n  color: var\(--muted\);/);
+  assert.doesNotMatch(
+    css,
+    /\.showcase__content p,\r?\n\.materials__copy p,\r?\n\.contact p \{\r?\n  color: rgba\(255, 250, 241/
+  );
+});
